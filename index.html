@@ -1,1 +1,87 @@
-Hola
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de Compra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Orden de Compra</h2>
+        <p><strong>Número de Orden:</strong> #OC-0001</p>
+        <p><strong>Fecha:</strong> 10/03/2025</p>
+        <p><strong>Proveedor:</strong> Nombre del Proveedor</p>
+        <p><strong>Dirección:</strong> Dirección del Proveedor</p>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Unidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MAT-001</td>
+                <td>Material A</td>
+                <td>10</td>
+                <td>Piezas</td>
+                <td>$50.00</td>
+                <td>$500.00</td>
+            </tr>
+            <tr>
+                <td>MAT-002</td>
+                <td>Material B</td>
+                <td>5</td>
+                <td>Piezas</td>
+                <td>$30.00</td>
+                <td>$150.00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="text-align: right;"><strong>Total General:</strong></td>
+                <td><strong>$650.00</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <div class="footer">
+        <p><strong>Términos de Pago:</strong> Pago en 30 días</p>
+        <p><strong>Aprobado por:</strong> ________</p>
+    </div>
+</body>
+</html>
