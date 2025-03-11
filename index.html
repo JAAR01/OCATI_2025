@@ -1,69 +1,86 @@
-<!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orden de Compra</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>ORDEN DE COMPRA</title>
+    <link rel="stylesheet" href="https://jaar01.github.io/OCATI_2025/style.css">
+    <link rel="license" href="https://www.opensource.org/licenses/mit-license/">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="https://n9.cl/v4t7l" alt="Logo Empresa">
-            <p><strong>Orden de Compra</strong></p>
-            <p>Fecha de Creación: {{FECHA_DE_COMPRA}}</p>
-            <p>Proveedor: {{PROVEEDOR}}</p>
-            <p>RFC Proveedor: {{RFC}}</p>
-        </div>
-        
-        <div class="title">
-            <p>ORDEN DE COMPRA - {{SERIE}} / {{TIPO_DE_COMPRA}}</p>
-        </div>
+    <header>
+        <h1>ORDEN DE COMPRA</h1>
+        <address>
+            <p>MI EMPRESA</p>
+            <p>AERJ871222FL8<br>Privada Camino al Cerrito N.1</p>
+            <p>Corregidora Queretaro</p>
+        </address>
 
-        <table>
+        <div style="float: right;">
+            <img alt="" src="https://n9.cl/v4t7l" style="width: 100px; height: 100px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+        </div>
+    </header>
+    <article>
+        <h1>Proveedor</h1>
+        <address>
+            <p>&lt;&lt;[PROVEEDOR]&gt;&gt;<br>-</p>
+            <p class="small-text">RFC: &lt;&lt;[RFC]&gt;&gt;</p>
+        </address>
+        <table class="meta">
             <tr>
-                <td><strong>Almacén:</strong> {{ALMACEN}}</td>
-                <td><strong>Proyecto:</strong> {{PROYECTO}}</td>
+                <th><span>Orden de Compra #</span></th>
+                <td><span>&lt;&lt;[SERIE]&gt;&gt;</span></td>
             </tr>
             <tr>
-                <td><strong>Usuario de Registro:</strong> {{USUARIO_REGISTRO}}</td>
-                <td><strong>Fecha de Compra:</strong> {{FECHA_DE_COMPRA}}</td>
+                <th><span>Fecha de Creación</span></th>
+                <td><span>&lt;&lt;[FECHA_DE_COMPRA]&gt;&gt;</span></td>
+            </tr>
+            <tr>
+                <th><span>Total</span></th>
+                <td><span>&lt;&lt;[Total]&gt;&gt;</span></td>
             </tr>
         </table>
-
-        <table class="table">
+        <table class="inventory">
             <thead>
                 <tr>
-                    <th>Cód Producto</th>
-                    <th>Descripción</th>
-                    <th>Cantidad</th>
-                    <th>Precio Unitario</th>
-                    <th>Importe</th>
+                    <th><span>Cód Producto</span></th>
+                    <th><span>Descripción</span></th>
+                    <th><span>Cantidad</span></th>
+                    <th><span>Valor ud</span></th>
+                    <th><span>Subtotal</span></th>
                 </tr>
             </thead>
             <tbody>
-                {{#each DETALLECOMPRAS}}
-                <tr class="highlight">
-                    <td>{{CODIGO_CONSUMIBLE}}</td>
-                    <td>{{DESCRIPCION}} - {{COMENTARIOS}}</td>
-                    <td>{{CANTIDAD}}</td>
-                    <td>{{PRECIO_UNITARIO}}</td>
-                    <td>{{IMPORTE}}</td>
+                <p><span>&lt;&lt;Start: SELECT(DETALLECOMPRAS[id_detalle],[ID]=[_THISROW].[ID])&gt;&gt;</span></p>
+                <tr>
+                    <td><a class="cut">-</a>&lt;&lt;[CODIGO_CONSUMIBLE]&gt;&gt;</td>
+                    <td><span>&lt;&lt;[DESCRIPCION]&gt;&gt; - &lt;&lt;[COMENTARIOS]&gt;&gt;</span></td>
+                    <td><span>&lt;&lt;[CANTIDAD]&gt;&gt;</span></td>
+                    <td><span>&lt;&lt;[PRECIO_UNITARIO]&gt;&gt;</span></td>
+                    <td><span>&lt;&lt;[IMPORTE]&gt;&gt;</span></td>
                 </tr>
-                {{/each}}
+                <p><span>&lt;&lt;End&gt;&gt;</span></p>
             </tbody>
         </table>
-
-        <div class="totals">
-            <p><strong>Subtotal:</strong> ${{Subtotal}}</p>
-            <p><strong>IVA 16%:</strong> ${{IVA}}</p>
-            <p><strong>Total:</strong> ${{Total}}</p>
-        </div>
-
-        <div class="footer">
+        <a class="add">+</a>
+        <table class="balance">
+            <tr>
+                <th><span>Subtotal</span></th>
+                <td><span>&lt;&lt;[Subtotal]&gt;&gt;</span></td>
+            </tr>
+            <tr>
+                <th><span>IVA 16%</span></th>
+                <td><span>&lt;&lt;[IVA]&gt;&gt;</span></td>
+            </tr>
+            <tr>
+                <th><span>Total</span></th>
+                <td><span>&lt;&lt;[Total]&gt;&gt;</span></td>
+            </tr>
+        </table>
+    </article>
+    <aside>
+        <h1><span>Notas adicionales</span></h1>
+        <div>
             <p>Correo para envíos de facturas: admonati01@gmail.com</p>
         </div>
-    </div>
-    <script src="script.js"></script>
+    </aside>
 </body>
 </html>

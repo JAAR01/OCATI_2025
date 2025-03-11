@@ -6,42 +6,87 @@ body {
     width: 8.5in;
     height: 11in;
 }
+
 .container {
     width: 100%;
     margin: 0 auto;
     padding: 10px;
 }
-.header, .footer {
+
+header, article, aside {
+    width: 100%;
+    padding: 10px;
+}
+
+header {
     text-align: center;
 }
-.header img {
-    width: 150px;
+
+header img {
+    width: 100px; /* Ajuste del tamaño de la imagen */
 }
-.title {
+
+header address {
     text-align: center;
+    margin-top: 10px;
+}
+
+article h1 {
     font-size: 16px;
     font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
 }
-.table {
+
+article address {
+    margin-bottom: 20px;
+}
+
+table.meta, table.inventory, table.balance {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.table th, .table td {
+
+table.meta th, table.inventory th, table.balance th {
+    background-color: #40E0D0;
+    padding: 8px;
+    text-align: left;
+}
+
+table.meta td, table.inventory td, table.balance td {
     border: 1px solid #000;
     padding: 8px;
     text-align: left;
 }
-.table th {
-    background-color: #40E0D0;
-}
-.table .highlight {
+
+table.inventory .highlight {
     background-color: #f2f2f2;
 }
-.footer {
+
+table.balance {
+    text-align: right;
+}
+
+table.balance th, table.balance td {
+    text-align: right;
+}
+
+aside {
     margin-top: 20px;
 }
-.totals {
-    text-align: right;
-    margin-top: 10px;
+
+aside h1 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+aside div {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.small-text {
+    font-size: 10px;
 }
