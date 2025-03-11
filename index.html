@@ -33,10 +33,6 @@
                 <th><span>Fecha de Creación</span></th>
                 <td><span>&lt;&lt;[FECHA_DE_COMPRA]&gt;&gt;</span></td>
             </tr>
-            <tr>
-                <th><span>Total</span></th>
-                <td><span>&lt;&lt;[Total]&gt;&gt;</span></td>
-            </tr>
         </table>
         <table class="inventory">
             <thead>
@@ -49,7 +45,7 @@
                 </tr>
             </thead>
             <tbody>
-                <p><span>&lt;&lt;Start: SELECT(DETALLECOMPRAS[id_detalle],[ID]=[_THISROW].[ID])&gt;&gt;</span></p>
+                <p><span>&lt;&lt;Start: SELECT(DETALLECOMPRAS[ID],[ID_OC]=[ID])&gt;&gt;</span></p>
                 <tr>
                     <td><a class="cut">-</a>&lt;&lt;[CODIGO_CONSUMIBLE]&gt;&gt;</td>
                     <td><span>&lt;&lt;[DESCRIPCION]&gt;&gt; - &lt;&lt;[COMENTARIOS]&gt;&gt;</span></td>
@@ -64,15 +60,15 @@
         <table class="balance">
             <tr>
                 <th><span>Subtotal</span></th>
-                <td><span>&lt;&lt;[Subtotal]&gt;&gt;</span></td>
+                <td><span>&lt;&lt;SUM(SELECT(DETALLECOMPRAS[IMPORTE],[ID_OC]=[ID]))&gt;&gt;</span></td>
             </tr>
             <tr>
                 <th><span>IVA 16%</span></th>
-                <td><span>&lt;&lt;[IVA]&gt;&gt;</span></td>
+                <td><span>&lt;&lt;SUM(SELECT(DETALLECOMPRAS[IMPORTE],[ID_OC]=[ID]))*0.16&gt;&gt;</span></td>
             </tr>
             <tr>
                 <th><span>Total</span></th>
-                <td><span>&lt;&lt;[Total]&gt;&gt;</span></td>
+                <td><span>&lt;&lt;SUM(SELECT(DETALLECOMPRAS[IMPORTE],[ID_OC]=[ID])) + SUM(SELECT(DETALLECOMPRAS[IMPORTE],[ID_OC]=[ID]))*0.16&gt;&gt;</span></td>
             </tr>
         </table>
     </article>
